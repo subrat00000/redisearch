@@ -27,4 +27,4 @@ RUN mkdir -p /usr/lib/redis/modules
 COPY --from=builder /RediSearch/bin/linux-arm64v8-release/search/redisearch.so /usr/lib/redis/modules
 
 EXPOSE 6379
-CMD ["redis-server", "--loadmodule", "/usr/lib/redis/modules/redisearch.so"]
+CMD ["redis-server --port 80", "--loadmodule", "/usr/lib/redis/modules/redisearch.so"]
